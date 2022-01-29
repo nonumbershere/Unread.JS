@@ -26,3 +26,4 @@ First, download the UNREAD.js file. Place it in a folder/DIR, copy the current D
     
   </b>
 </details>
+<b>Or open the <a href='https://github.com/nonumbershere/Unread.JS/wiki/Documentation'>Wiki</a>
