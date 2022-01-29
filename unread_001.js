@@ -4,6 +4,11 @@
  * By Lapide
  * VERSION 0.0.1
  */
+
+// Whats new
+/*
+- Added Node.JS Support
+*/
 var current = "";
 
 function getCurrentST() {
