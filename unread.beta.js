@@ -1,4 +1,4 @@
-// b0.1
+// NODE.JS VERSION
 /**
  * unread.js
  * By Lapide
@@ -30,7 +30,7 @@ var mylib = {
     }
     return msg_;
   },
-  convertToBinay: function converToBinary(msg) {
+  convertToBinary: function converToBinary(msg) {
     var msg_ = msg.split("");
     var bin = [];
     for (var i = 0; i < msg_.length; ++i) {
@@ -71,19 +71,20 @@ function decrypt_hex(w) {
   return mylib.convertHexToText(w);
 }
 function encrypt_binary(w) {
-  return mylib.convertToBinay(w);
+  return mylib.convertToBinary(w);
 }
 function decrypt_binary(w) {
   return mylib.convertBinaryToText(w);
 }
 function encrypt_unread(w) {
   var n = [];
+  var decode = '';
   for (var i = 0; i < w.length; ++i) {
-    str += w[i];
+    //str += w[i];
     n.push(btoa_((w[i].toString().charCodeAt(0) - 65).toString()));
   }
   for (var g = 0; g < n.length; ++g) {
-    // decode += String.fromCharCode(65 + parseInt(atob_(n[g].toString())));
+       decode += String.fromCharCode(65 + parseInt(atob_(n[g].toString())));
   }
   return n.join(" ");
   //console.log(decode);
@@ -219,4 +220,4 @@ function examples() {
     )
   );
 }
-examples();
+//examples();
