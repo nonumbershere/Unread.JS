@@ -2,6 +2,7 @@
 /**
  * unread.js
  * By Lapide
+ * BETA 0.0.1
  */
 var current = "";
 
