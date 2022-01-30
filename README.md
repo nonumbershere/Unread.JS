@@ -19,9 +19,11 @@ First, download the UNREAD.js file. Place it in a folder/DIR, copy the current D
 <details close>
   <summary><b>Node.js</b></summary>
   <b>To install this into your project do:</b>
-  ```cmd
-  npm install yncode
-  ```
+  
+ ```
+npm install yncode
+```
+  
 </details>
 <details close>
   <summary><b>Web</b></summary>
