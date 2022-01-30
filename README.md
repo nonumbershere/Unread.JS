@@ -3,6 +3,7 @@
 <hr>
 <h3>About</h3>
 <b>This tool was created by Lapide (nonumbershere) Open-Source and copyright-free. Find any bugs? Make a pull request!</b>
+
 <b>Github: https://github.com/nonumbershere/Unread.JS</b>
 
 <b>NPM: https://www.npmjs.com/package/yncode</b>
