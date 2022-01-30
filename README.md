@@ -3,7 +3,10 @@
 <hr>
 <h3>About</h3>
 <b>This tool was created by Lapide (nonumbershere) Open-Source and copyright-free. Find any bugs? Make a pull request!</b>
-<h3>How To Use</h3>
+<b>Github: https://github.com/nonumbershere/Unread.JS</b>
+
+<b>NPM: https://www.npmjs.com/package/yncode</b>
+<h3>Installation</h3>
 <details close>
   <summary><b>Node.js Console</b></summary>
 First, download the UNREAD.js file. Place it in a folder/DIR, copy the current DIR of the folder you placed it in and open the Node.js console.<br>
@@ -14,7 +17,10 @@ First, download the UNREAD.js file. Place it in a folder/DIR, copy the current D
 </details>
 <details close>
   <summary><b>Node.js</b></summary>
-  <b>SUPPORT COMING SOON</b>
+  <b>To install this into your project do:</b>
+  ```cmd
+  npm install yncode
+  ```
 </details>
 <details close>
   <summary><b>Web</b></summary>
