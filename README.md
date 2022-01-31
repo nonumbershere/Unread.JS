@@ -1,13 +1,30 @@
-<h1 align = "center">Unread.JS</h1>
-<h2 align = "center"><i>For Node.js & Browser</i></h2>
-<hr>
-<h3>Examples</h3>
+# Yncrypt (Unread)
+[Web](https://github.com/nonumbershere/Unread.JS)
 
-**Encrypt**
-```js
-// Encrypt Code With Yncrypt
+[Node.JS]()
 
-var yncrypt = require('yncrypt');
+**Unread** can encrypt messages or code. You can execute code inside of these encrypted messages. **Unread** also support binary.
+**Currently only supporting browser and Node.JS**
+## License
+
+**Yncode (Unread)** Currently used the [GNU General Public License v3.0](https://raw.githubusercontent.com/nonumbershere/Private-Javascript/master/LICENSE?token=GHSAT0AAAAAABOLQCEPSLULFAZBXUVQBMLUYPYAN2Q) License
+## Installation
+
+Install **Yncode** with npm
+
+```bash
+  npm install yncode
+```
+```html
+<script src="./unread.js"></script>
+```
+
+## Usage/Examples
+
+```javascript
+// Encrypt Code With Yncode
+
+var yncode = require('yncode');
 
 console.log(yncrypt.encrypt('hex', 'Hello World!'));
 console.log(yncrypt.encrypt('binary', 'Hello World!'));
@@ -15,40 +32,22 @@ console.log(yncrypt.encrypt('bb3', 'Hello World!'));
 console.log(yncrypt.encrypt('unread', 'Hello World!'));
 console.log(yncrypt.encrypt('abn', 'Hello World!'));
 ```
-Find more at [The Wiki](https://github.com/nonumbershere/Unread.JS/wiki/Documentation)
 
-<h3>About</h3>
-<b>This tool was created by Lapide (nonumbershere) Open-Source and copyright-free. Find any bugs? Make a pull request!</b>
 
-<b>Github: https://github.com/nonumbershere/Unread.JS</b>
+## Support
 
-<b>NPM: https://www.npmjs.com/package/yncode</b>
-<h3>Installation</h3>
-<details close>
-  <summary><b>Node.js Console</b></summary>
-First, download the UNREAD.js file. Place it in a folder/DIR, copy the current DIR of the folder you placed it in and open the Node.js console.<br>
-  Type:
-  
-  ``.load [dir_name]``
-  
-</details>
-<details close>
-  <summary><b>Node.js</b></summary>
-  <b>To install this into your project do:</b>
-  
- ```
-npm install yncode
-```
-  
-</details>
-<details close>
-  <summary><b>Web</b></summary>
-  <b>Download the UNREAD.js file, place it inside of your project folder. Inside of your HTML file enter:
-  
-   
-    <script src = "./unread.js"></script>
-    
-    
-  </b>
-</details>
-<b>Or open the <a href='https://github.com/nonumbershere/Unread.JS/wiki/Documentation'>Wiki</a>
+Created a [pull-request](https://github.com/nonumbershere/Unread.JS/pulls) for bugs/recommendations
+
+
+## Features
+
+- Encrypt/Decrypt messages
+- Execute Encrypted/Decrypted messages
+- Can execute binary, hex ETC
+- Use **btoa** in Node.JS
+
+
+## Documentation
+
+You can find help at the [Documentation](https://github.com/nonumbershere/Unread.JS/wiki/Documentation)
+
