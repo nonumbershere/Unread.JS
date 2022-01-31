@@ -1,6 +1,22 @@
 <h1 align = "center">Unread.JS</h1>
 <h2 align = "center"><i>For Node.js & Browser</i></h2>
 <hr>
+<h3>Examples</h3>
+
+**Encrypt**
+```js
+// Encrypt Code With Yncrypt
+
+var yncrypt = require('yncrypt');
+
+console.log(yncrypt.encrypt('hex', 'Hello World!'));
+console.log(yncrypt.encrypt('binary', 'Hello World!'));
+console.log(yncrypt.encrypt('bb3', 'Hello World!'));
+console.log(yncrypt.encrypt('unread', 'Hello World!'));
+console.log(yncrypt.encrypt('abn', 'Hello World!'));
+```
+Find more at [The Wiki](https://github.com/nonumbershere/Unread.JS/wiki/Documentation)
+
 <h3>About</h3>
 <b>This tool was created by Lapide (nonumbershere) Open-Source and copyright-free. Find any bugs? Make a pull request!</b>
 
