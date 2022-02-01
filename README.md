@@ -35,7 +35,7 @@ Install **Yncode** with npm
 ```
 
 ```html
-<script src="./unread.js"></script>
+<script src="https://raw.githubusercontent.com/nonumbershere/Unread.JS/main/unread_main.js"></script>
 ```
 
 ## Documentation
