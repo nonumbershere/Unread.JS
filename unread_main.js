@@ -1,20 +1,21 @@
 /**
  * unread.js
  * By Lapide
- * VERSION 0.0.7
+ * VERSION 0.0.8
  *
  * WHATS NEW
- * - Added Auto option to decrypt_binary
- * - Added Spaces option to encrypt_binary
- * - Fixed some bugs in encrypt_binary (Unable to encode in the right format)
+ * - Upgraded decrypt_binary auto, now more advanced
+ * - Added space editor to encrypt_binary, instead of " " you can add "." and more
+ * - Added type checker in encrypt & decrypt
+ * - Have our own API, try it out at [Yncode](yncode.glitch.me)
  *
  * PLANING
- * - More Auto options to other decrypters
- * 
- * 
- * ALSO IN README.MD
+ * -
+ *
+ *
+ * ALSO IN README.MD & API (yncode.glitch.me)
  */
-var version = '0.0.7'
+var version = "0.0.8";
 var current = "";
 
 function getCurrentST() {
@@ -43,36 +44,57 @@ var mylib = {
     }
     return msg_;
   },
-  convertToBinary: function converToBinary(msg, space = true) {
-    var msg_ = msg.split("");
-    var bin = [];
-    for (var i = 0; i < msg_.length; ++i) {
-      bin.push(
-        "00000000".slice(msg_[i].toString().charCodeAt().toString(2).length) + msg_[i].toString().charCodeAt().toString(2)
-      );
+  convertToBinary: function converToBinary(msg, space = true, space_text) {
+    try {
+      var msg_ = msg.split("");
+      var bin = [];
+      for (var i = 0; i < msg_.length; ++i) {
+        bin.push(
+          "00000000".slice(msg_[i].toString().charCodeAt().toString(2).length) +
+            msg_[i].toString().charCodeAt().toString(2)
+        );
+      }
+      return space
+        ? space_text
+          ? bin.join(space_text)
+          : bin.join(" ")
+        : bin.join("");
+    } catch (error) {
+      if (error) {
+        throw "Cannot convert binary";
+      }
+    } finally {
+      // .
     }
-    return space ? bin.join(" ") : bin.join("");
   },
 
   convertBinaryToText: function convertBinaryToText(msg, auto = false) {
-    var msg_ = "";
-    if (auto) {
-      var zz = msg;
-      for (var gg = 0; gg < zz.length; ++gg) {
-        if (zz.includes(" ")) {
-          zz = zz.replace(" ", "");
+    try {
+      var msg_ = "";
+      if (auto) {
+        var zz = msg;
+        for (var gg = 0; gg < zz.length; ++gg) {
+          if (zz[gg] != "1" && zz[gg] != "0") {
+            zz = zz.replace(zz[gg], "");
+          }
         }
+        var zz1 = zz.match(/.{1,8}/g).join(" ");
+        msg_ = zz1.split(" ");
+      } else {
+        msg_ = msg.split(" ");
       }
-      var zz1 = zz.match(/.{1,8}/g).join(" ");
-      msg_ = zz1.split(" ");
-    } else {
-      msg_ = msg.split(" ");
+      var debin = [];
+      for (var i = 0; i < msg_.length; ++i) {
+        debin.push(String.fromCharCode(parseInt(msg_[i], 2)));
+      }
+      return debin.join("");
+    } catch (error) {
+      if (error) {
+        throw "Cannot read binary";
+      }
+    } finally {
+      // .
     }
-    var debin = [];
-    for (var i = 0; i < msg_.length; ++i) {
-      debin.push(String.fromCharCode(parseInt(msg_[i], 2)));
-    }
-    return debin.join("");
   },
 };
 var Letters = {
@@ -236,8 +258,8 @@ function decrypt_hex(w) {
   return mylib.convertHexToText(w);
 }
 
-function encrypt_binary(w, spaces) {
-  return mylib.convertToBinary(w, spaces);
+function encrypt_binary(w, spaces, space_text) {
+  return mylib.convertToBinary(w, spaces, space_text);
 }
 
 function decrypt_binary(w, auto) {
@@ -335,37 +357,37 @@ var types_ex = {
   polo: execute_polo,
 };
 
-function encrypt(type, code) {
+function encrypt(type, code, auto) {
   for (var i in types_en) {
     if (i.toString() == type) {
-      return types_en[i](code);
+      return types_en[i](code, auto);
     } else {
-      if (types_en[i] == types_en[types_en.length - 1]) {
-        throw "Failed to identify type";
+      if (!types_en.hasOwnProperty(type)) {
+        return "Failed to identify type";
       }
     }
   }
 }
 
-function decrypt(type, code) {
+function decrypt(type, code, auto) {
   for (var i in types_de) {
     if (i.toString().toLowerCase() == type.toLowerCase()) {
-      return types_de[i](code);
+      return types_de[i](code, auto);
     } else {
-      if (types_de[i] == types_de[types_de.length - 1]) {
-        throw "Failed to identify type";
+      if (!types_de.hasOwnProperty(type)) {
+        return "Failed to identify type";
       }
     }
   }
 }
 
-function execute(type, code) {
+function execute(type, code, auto = true) {
   for (var i in types_ex) {
     if (i.toString().toLowerCase() == type.toLowerCase()) {
-      return types_ex[i](code);
+      return types_ex[i](code, auto);
     } else {
-      if (types_ex[i] == types_ex[types_ex.length - 1]) {
-        throw "Failed to identify type";
+      if (!types_ex.hasOwnProperty(type)) {
+        return "Failed to identify type";
       }
     }
   }
