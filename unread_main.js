@@ -14,7 +14,7 @@
  * 
  * ALSO IN README.MD
  */
-
+var version = '0.0.7'
 var current = "";
 
 function getCurrentST() {
