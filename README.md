@@ -69,7 +69,7 @@ console.log(yncode.encrypt("polo", "Hello World!"));
 
 ## Support
 
-Created a [pull-request](https://github.com/nonumbershere/Unread.JS/pulls) for bugs/recommendations
+Created a [issue](https://github.com/nonumbershere/Unread.JS/issues) for bugs/recommendations
 
 ## Features
 
