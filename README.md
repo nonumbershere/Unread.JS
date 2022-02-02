@@ -1,3 +1,8 @@
+<h1 align='center'>Unread.JS</h1>
+<p align = 'center'><a href="https://www.npmjs.com/package/yncode"><b>Node.JS</a> • <a href="https://github.com/nonumbershere/Unread.JS/wiki/API-Documentaion">Documentation</a> • <a href="https://github.com/nonumbershere/Unread.JS#installation">Installation</a></b></p>
+<hr>
+
+
 ### _PATCH NOTES (0.0.8)_
 
 - **Upgraded decrypt_binary auto, now more advanced**
@@ -7,7 +12,7 @@
 - **It now has an API, try it out at [Yncode](https://yncode.glitch.me/) Read the documentation at [API Documentation](https://github.com/nonumbershere/Unread.JS/wiki/API-Documentaion)**
 - **Upgraded binary auto, now more advanced**
 
-# Yncode (Unread)
+## Yncode (Unread)
 
 **Unread** can encrypt messages or code. You can execute code inside of these encrypted messages. **Unread** also support binary.
 
